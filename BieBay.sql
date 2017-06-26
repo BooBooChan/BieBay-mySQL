@@ -3,16 +3,16 @@ DROP DATABASE IF EXISTS biebay_database;
 #...otherwise, create a new one.
 CREATE DATABASE biebay_database;
 #Prepare database to be executed by the Terminal using USE DATABASE
-USE DATABASE biebay_database;
+USE biebay_database;
 #Database needs data, so CREATE a TABLE.
 CREATE TABLE products (
 #Now start adding columns
-`item_id` INT(1) AUTO_INCREMENT,#AUTO_INCREMENT will assign unique ID number to every new item entered.
-`product_name` VARCHAR(100),#Number in parentheses for VARCHAR determines max characters in entered value.
-`department_name` VARCHAR(50),
-`price_in_us_dollars` INTEGER,
-`stock_quantity` INTEGER,
-`autographed` TINYINT(1),#Seting a TINYINT between 0 and 1 will allow a boolean "true" or "false" statment
+`item_id` INT(1) AUTO_INCREMENT NOT NULL,#AUTO_INCREMENT will assign unique ID number to every new item entered.
+`product_name` VARCHAR(100) NULL,#Number in parentheses for VARCHAR determines max characters in entered value.
+`department_name` VARCHAR(50) NULL,
+`price_in_us_dollars` INTEGER NULL,
+`stock_quantity` INTEGER NULL,
+`autographed` TINYINT(1) NULL,#Seting a TINYINT between 0 and 1 will allow a boolean "true" or "false" statment
 PRIMARY KEY (`item_id`)#Primary key allegedly updates 'item_id' on my behalf for every new item entered. Also, PRIMARY KEY has no NULL value.
 );
 #Then add values to those columns.
